@@ -4,10 +4,10 @@
     "slug": "car-inc",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/carinc-icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash-logo.png",
+      "image": "./assets/carinc-splash.png",
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
@@ -16,12 +16,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/carinc-icon.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/carinc-favicon.png"
     }
   }
 }

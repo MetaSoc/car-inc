@@ -110,6 +110,17 @@ export default function BookingScreen({ navigation }: any) {
                     minimumDate={startDate}
                     selected={date}
                     onDateChange={(propDate: any) => setDate(propDate)}
+                    options={{
+                      mainColor: '#434343',
+                      headerAnimationDistance: 50,
+                      daysAnimationDistance: 50,
+                      textHeaderFontSize: 20,
+                      textFontSize: 16,
+                    }}
+                    style={{
+                      marginTop: 20,
+                      marginBottom: 5,
+                    }}
                   />
                   <Pressable
                     style={styles.confirmButton}
@@ -232,8 +243,7 @@ const styles = StyleSheet.create({
   calendarBottom: {
     width: '100%',
     backgroundColor: '#fff',
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
+    borderRadius: 20,
     alignItems: 'center',
     shadowOffset: {
       width: 0,
@@ -241,6 +251,7 @@ const styles = StyleSheet.create({
     },
     elevation: 5,
   },
+
   confirmButton: {
     backgroundColor: '#000',
     width: '25%',
