@@ -1,6 +1,9 @@
 import { useRoute } from '@react-navigation/native'
 import React from 'react'
 import { StyleSheet, Text, TouchableHighlight, View } from 'react-native'
+import { LogBox } from 'react-native'
+LogBox.ignoreAllLogs()
+import sendEmail from '../sendEmail'
 
 export default function ConfirmationScreen({ navigation }: any) {
   const route = useRoute<any>()
@@ -29,6 +32,10 @@ export default function ConfirmationScreen({ navigation }: any) {
           <Text style={{ fontWeight: 'normal' }}>
             {item.brand} {item.model}
           </Text>
+        </Text>
+        <Text style={styles.textStyle}>
+          Price:{'  '}
+          <Text style={{ fontWeight: 'normal' }}>{item.price} kr/day</Text>
         </Text>
         <Text />
         <Text style={styles.textStyle}>
@@ -74,7 +81,10 @@ export default function ConfirmationScreen({ navigation }: any) {
         ]}
         delayPressOut={400}
         underlayColor="#444"
-        onPress={() => navigation.navigate('Receipt', { firstName, email })}
+        onPress={() => {
+          sendEmail(route.params)
+          navigation.navigate('Receipt', { firstName, email })
+        }}
       >
         <Text style={styles.buttontext}>Confirm</Text>
       </TouchableHighlight>
